@@ -215,27 +215,144 @@ Exécuté divers scripts de hook pour surveiller les appels système et les mét
 
 ### hook_connect.js (hook syscall connect)
 Journalisé 3 appels connect avec des détails comme le descripteur de fichier, sockaddr, et les valeurs de retour.
+![img5](img/img6.png)
 
 ### hook_network.js (hooks send/recv)
 Script chargé avec succès ; aucune activité réseau journalisée pendant le test.
+![img5](img/img7.png)
 
 ### hook_file.js (hooks open/read)
 Journalisé environ 20 opérations de fichier, incluant les chemins APK et /proc/self/cmdline.
+```
+     ____
+    / _  |   Frida 17.9.1 - A world-class dynamic instrumentation toolkit
+   | (_| |
+    > _  |   Commands:
+   /_/ |_|       help      -> Displays the help system
+   . . . .       object?   -> Display information about 'object'
+   . . . .       exit/quit -> Exit
+   . . . .
+   . . . .   More info at https://frida.re/docs/home/
+   . . . .
+   . . . .   Connected to Nexus 5 (id=192.168.56.101:5555)
+Spawning `com.example.lab5`...
+[+] Hook fichiers charge
+[+] open trouvee a : 0x71041f069050
+[+] read trouvee a : 0x71041f0b26c0
+Spawned `com.example.lab5`. Resuming main thread!
+[Nexus 5::com.example.lab5 ]-> [+] read appelee
+    fd = 0x25
+    taille = 8
+[+] read appelee
+    fd = 0x2f
+    taille = 8
+[+] read appelee
+    fd = 0x25
+    taille = 8
+[+] open appelee : /proc/self/cmdline
+[+] read appelee
+    fd = 0x32
+    taille = 1024
+[+] read appelee
+    fd = 0x32
+    taille = 1024
+[+] open appelee : /data/app/~~-NRzNAcDtpp9I7KonmDEYg==/com.example.lab5-nqGQeYilsF2RiSoFDSioTw==/oat/x86_64/base.vdex
+[+] open appelee : /data/app/~~-NRzNAcDtpp9I7KonmDEYg==/com.example.lab5-nqGQeYilsF2RiSoFDSioTw==/base.apk
+[+] read appelee
+    fd = 0x32
+    taille = 4
+[+] open appelee : /apex/com.android.art/javalib/x86_64/boot.art
+[+] read appelee
+    fd = 0x32
+    taille = 256
+[+] open appelee : /system/framework/x86_64/boot-framework.art
+[+] read appelee
+    fd = 0x32
+    taille = 256
+[+] open appelee : /data/app/~~-NRzNAcDtpp9I7KonmDEYg==/com.example.lab5-nqGQeYilsF2RiSoFDSioTw==/oat/x86_64/base.art
+[+] open appelee : /data/app/~~-NRzNAcDtpp9I7KonmDEYg==/com.example.lab5-nqGQeYilsF2RiSoFDSioTw==/base.apk
+[+] read appelee
+    fd = 0x33
+    taille = 8
+[+] read appelee
+    fd = 0x33
+    taille = 8
+[+] read appelee
+    fd = 0x33
+    taille = 8
+[+] read appelee
+    fd = 0x33
+    taille = 8
+[+] read appelee
+    fd = 0x33
+    taille = 8
+[+] read appelee
+    fd = 0x33
+    taille = 8
+[+] read appelee
+    fd = 0x33
+    taille = 8
+[+] read appelee
+    fd = 0x33
+    taille = 8
+[+] read appelee
+    fd = 0x33
+    taille = 8
+[+] read appelee
+    fd = 0x33
+    taille = 8
+[+] read appelee
+    fd = 0x33
+    taille = 8
+[+] read appelee
+    fd = 0x33
+    taille = 8
+[+] read appelee
+    fd = 0x33
+    taille = 8
+[+] read appelee
+    fd = 0x2f
+    taille = 8
+[+] read appelee
+    fd = 0x33
+    taille = 8
+[+] read appelee
+    fd = 0x2f
+    taille = 8
+[+] read appelee
+    fd = 0x33
+    taille = 8
+[+] read appelee
+    fd = 0x33
+    taille = 8
+[+] read appelee
+    fd = 0x2f
+    taille = 8
+[+] read appelee
+    fd = 0x2f
+    taille = 8
+```
+![img8](img/img8.png)
 
 ### hook_prefs.js (hook lecture SharedPreferences)
 Script chargé ; aucune opération de lecture journalisée.
+![img9](img/img9.png)
 
 ### hook_prefs_write.js (hook écriture SharedPreferences)
 Script chargé ; aucune opération d'écriture journalisée.
+![img10](img/img10.png)
 
 ### hook_sqlite.js (hook requête SQLite)
 Script chargé ; aucune requête de base de données journalisée.
+![img11](img/img11.png)
 
 ### hook_runtime.js (hook Runtime.exec)
 Script chargé ; aucune opération exec journalisée.
+![img12](img/img12.png)
 
 ### hook_file_java.js (hook chemin Java File)
 Journalisé 1 chemin File : "/system/etc/security/cacerts"
+![img13](img/img13.png)
 
 ## Exploration Interactive de la Console
 Exploré la console Frida pour les détails du processus :
@@ -248,6 +365,40 @@ Exploré la console Frida pour les détails du processus :
 - **enumerateThreads.slice(0,5)** : 5 threads avec contextes
 - **enumerateRanges('r-x').slice(0,5)** : 5 plages de mémoire lisibles-exécutables
 - **Java.available** : true
-
+```
+     ____
+    / _  |   Frida 17.9.1 - A world-class dynamic instrumentation toolkit
+   | (_| |
+    > _  |   Commands:
+   /_/ |_|       help      -> Displays the help system
+   . . . .       object?   -> Display information about 'object'
+   . . . .       exit/quit -> Exit
+   . . . .
+   . . . .   More info at https://frida.re/docs/home/
+   . . . .
+   . . . .   Connected to Nexus 5 (id=192.168.56.101:5555)
+Spawned `com.example.lab5`. Resuming main thread!
+[Nexus 5::com.example.lab5 ]-> Process.arch
+"x64"
+[Nexus 5::com.example.lab5 ]-> Process.mainModule
+{
+    "base": "0x6028799aa000",
+    "name": "app_process64",
+    "path": "/system/bin/app_process64",
+    "size": 45056,
+    "version": null
+}
+[Nexus 5::com.example.lab5 ]-> Process.getModuleByName("libc.so")
+{
+    "base": "0x71041f000000",
+    "name": "libc.so",
+    "path": "/apex/com.android.runtime/lib64/bionic/libc.so",
+    "size": 1007616,
+    "version": null
+}
+[Nexus 5::com.example.lab5 ]-> Java.available
+true
+[Nexus 5::com.example.lab5 ]->
+```
 ## Conclusion
 Le laboratoire a démontré avec succès la configuration de Frida sur un émulateur Android, incluant le déploiement du serveur, la vérification d'injection, l'exécution des scripts de hook, et l'exploration du processus. Le dépannage a adressé les problèmes de liaison du serveur. Toutes les sorties ont été capturées dans lab_outputs.txt pour référence.
