@@ -191,7 +191,6 @@ Rencontré un problème où le serveur Frida était déjà en cours d'exécution
   ```
   .\adb shell pkill -9 frida-server
   ```
-  Sortie : <aucune sortie>
 
 - Vérifié que le serveur s'est arrêté :
   ```
@@ -203,14 +202,14 @@ Rencontré un problème où le serveur Frida était déjà en cours d'exécution
   ```
   .\adb shell /data/local/tmp/frida-server -l 0.0.0.0
   ```
-  Sortie : <aucune sortie> (processus démarré)
 
 - Confirmé que le serveur fonctionne à nouveau :
   ```
   .\adb shell ps | findstr frida
   ```
   Sortie : root          14096      1 11918348 141608 poll_schedule_timeout 783ce6e77a0a S frida-server
-
+![img4](img/img4.png)
+![img5](img/img5.png)
 ## Exécution des Scripts de Hook
 Exécuté divers scripts de hook pour surveiller les appels système et les méthodes Java. Note : Les journaux détaillés des hooks (par exemple, les appels de fonctions) ont été capturés lors de l'exécution mais sont résumés ici sur la base de l'activité observée.
 
