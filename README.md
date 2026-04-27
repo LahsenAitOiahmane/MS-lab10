@@ -14,7 +14,7 @@ Le laboratoire a été effectué sur une machine Windows 10 avec les versions d'
 Connexion de l'appareil :
 - Appareil connecté : 192.168.56.101:5555 (émulateur Nexus 5)
 - ABI CPU : x86_64
-[img1](img/img1.png)
+![img1](img/img1.png)
 ## Déploiement du Serveur Frida
 Le serveur Frida a été déployé sur l'émulateur Android comme suit :
 
@@ -39,7 +39,7 @@ Le serveur Frida a été déployé sur l'émulateur Android comme suit :
    .\adb shell ps | findstr frida
    ```
    Sortie : root          12340      1 11992360 175856 poll_schedule_timeout 7e17603fca0a S frida-server
-[img2](img/img2.png)
+![img2](img/img2.png)
 5. Configuré le transfert de port pour la communication Frida :
    ```
    .\adb forward tcp:27042 tcp:27042
@@ -48,7 +48,7 @@ Le serveur Frida a été déployé sur l'émulateur Android comme suit :
    Sortie :
       27042
       27043
-[img3](img/img3.png)
+![img3](img/img3.png)
 ## Liste des Processus
 Listé les processus en cours d'exécution sur l'appareil :
 
