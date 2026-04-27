@@ -7,7 +7,7 @@ Ce rapport documente l'exécution d'un laboratoire Frida sur un émulateur Andro
 Le laboratoire a été effectué sur une machine Windows 10 avec les versions d'outils suivantes :
 
 - **Version Python** : 3.13.5
-- **Version Pip** : 26.0.1 depuis C:\Users\sadik\AppData\Local\Programs\Python\Python313\Lib\site-packages\pip (python 3.13)
+- **Version Pip** : 26.0.1
 - **Version Frida** : 17.9.1 (client et liaison Python)
 - **Version ADB** : Android Debug Bridge version 1.0.41, Version 37.0.0-14910828
 
